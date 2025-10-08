@@ -1,8 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
-N:;AIsist Studio;;;
-FN:AIsist Studio
-ORG:AIsist Studio
-EMAIL;TYPE=work:contact@aisiststudio.com
+N:;AIsistStudio;;;
+FN:Mike
+ORG:AIsistStudio
+EMAIL;TYPE=work:spyderwellholdings@gmailcom
 URL:https://www.aisiststudio.com
 END:VCARD
+
