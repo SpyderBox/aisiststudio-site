@@ -1,0 +1,14 @@
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Node / build (if you ever add them later)
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+
+# Env/config (if you add private keys later)
+.env
