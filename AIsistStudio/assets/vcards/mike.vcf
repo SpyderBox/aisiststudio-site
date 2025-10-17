@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Mike;;;
+FN:Mike Cornwell
+ORG:AIsist Studio
+TITLE:Founder
+EMAIL;TYPE=INTERNET:Mike@AIsistStudio.com
+TEL;TYPE=CELL:+1-858-522-9573
+URL:https://AIsistStudio.com
+ADR;TYPE=WORK:;;;;
+END:VCARD
