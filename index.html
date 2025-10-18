@@ -1,101 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>The Lick & Tickle — EBDBBNB | Chic’s Beach, VA</title>
-  <meta name="description" content="The Lick & Tickle — EBDBBNB in Chic’s Beach, VA. Under construction. Soft-open soon." />
-  <meta name="theme-color" content="#0e0e10" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AIsist Studio — Humans × AI</title>
+  <meta name="description" content="A boutique studio where humans and AI grind out the good stuff. Strategy, brand, copy, and builds — shipped fast and clean.">
+  <link rel="icon" href="assets/logo.png">
   <style>
-    /* --- Tiny, mobile-first, no-horizontal-scroll shell --- */
-    :root{
-      --bg:#0e0e10; --ink:#f5f5f7; --muted:#b3b3b8; --accent:#ff3e7f; --card:#151517;
-      --ring:0 0 0 .12rem color-mix(in srgb, var(--accent), white 20%);
-    }
+    /* --- Reset (tiny) --- */
     *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; overflow-x:hidden; /* kill any accidental x-scroll */
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      color:var(--ink); background:var(--bg); line-height:1.5;
+    html,body{margin:0;padding:0}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+    /* --- Theme --- */
+    :root{
+      --bg:#0b0b0c;
+      --fg:#f7f7f8;
+      --muted:#b8bcc6;
+      --accent:#b1ff5c; /* electric hint */
+      --card:#121214;
+      --border:#202025;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    img,svg{max-width:100%; height:auto; display:block}
-    .wrap{width:min(680px, 92vw); margin:0 auto; padding: max(env(safe-area-inset-top),20px) 0 48px}
-    header{display:flex; gap:.8rem; align-items:center; padding:0 16px}
-    .logo{width:44px;height:44px;border-radius:10px; background: conic-gradient(from 210deg, var(--accent), #5ec2d1, var(--accent))}
-    h1{font-size:clamp(1.25rem, 1.1rem + 2vw, 1.8rem); margin:0}
-    .sub{margin:.15rem 0 0; color:var(--muted); font-size:.95rem}
-    .card{
-      margin:14px 16px 0; background: var(--card); border:1px solid #242428; border-radius:14px; padding:16px;
+    @media (prefers-color-scheme: light){
+      :root{--bg:#fafafa;--fg:#111;--muted:#555;--card:#ffffff;--border:#eaeaea}
+      .logo-invert{filter:invert(0)}
     }
-    .badge{display:inline-block; padding:.3rem .6rem; border-radius:999px; border:1px dashed color-mix(in srgb, var(--accent), white 40%); color:#ffe7f0; font-weight:600; font-size:.9rem}
-    h2{font-size:1.05rem; margin:.8rem 0 .4rem}
-    p{margin:.4rem 0; overflow-wrap:anywhere}
-    .cta{display:grid; gap:.6rem; margin-top:.8rem}
-    .btn{
-      appearance:none; border:0; border-radius:12px; padding:14px 16px; font-weight:700;
-      background:linear-gradient(180deg, color-mix(in srgb, var(--accent), white 12%), var(--accent)); color:white;
-      box-shadow: 0 6px 18px rgba(255,62,127,.35); cursor:pointer
+
+    body{background:var(--bg);color:var(--fg);font:16px/1.5 ui-sans-serif, system-ui,-apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji}
+    .wrap{max-width:980px;margin:0 auto;padding:24px 20px 80px}
+
+    /* --- Header --- */
+    header{display:flex;gap:14px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:40px;height:40px;border-radius:10px;background:#000;object-fit:contain;padding:2px}
+    .brand .name{font-weight:700;letter-spacing:.2px}
+    .badge{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
+
+    /* --- Hero --- */
+    .hero{margin:44px 0 24px;display:grid;gap:18px}
+    .headline{font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+    .sub{color:var(--muted)}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:12px;text-decoration:none;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow)}
+    .btn.primary{background:var(--accent);color:#111;border-color:transparent;font-weight:800}
+    .btn:active{transform:translateY(1px)}
+
+    /* --- Cards --- */
+    .grid{display:grid;gap:14px;margin-top:22px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* --- Footer --- */
+    footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;margin:0 6px 1px}
+
+    /* --- Larger screens --- */
+    @media (min-width:720px){
+      .headline{font-size:48px}
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .hero{grid-template-columns:1.2fr .8fr;align-items:center}
+      .hero-art{justify-self:end}
+      .hero-art img{width:160px;height:160px;border-radius:24px;padding:14px;background:#000}
     }
-    .btn.secondary{
-      background:#1f1f23; color:var(--ink); border:1px solid #2d2d34; box-shadow:none
-    }
-    .btn:focus-visible{outline:none; box-shadow:var(--ring)}
-    form{display:grid; grid-template-columns:1fr; gap:.6rem; margin-top:.4rem}
-    input[type="email"]{
-      width:100%; padding:14px 12px; border-radius:10px; border:1px solid #2b2b31; background:#0d0d10; color:var(--ink);
-      font-size:16px; /* avoid iOS zoom */
-    }
-    input::placeholder{color:#7a7a81}
-    .mini{font-size:.9rem; color:var(--muted)}
-    footer{margin:18px 16px 0; color:var(--muted); font-size:.95rem}
-    /* Motion sensitivity */
-    @media (prefers-reduced-motion: reduce){
-      *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
-    }
+
+    /* --- Safe area on iPhone --- */
+    .wrap{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
   </style>
 </head>
 <body>
-  <div class="wrap" role="main">
-    <header aria-label="Brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div>
-        <h1>The Lick &amp; Tickle</h1>
-        <p class="sub">An <strong>EBDBBNB</strong> in Chic’s Beach, VA — under construction.</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="assets/logo.png" alt="AIsist Studio logo" class="logo-invert">
+        <div class="name">AIsist Studio</div>
       </div>
+      <div class="badge">Humans × AI</div>
     </header>
 
-    <section class="card" aria-label="Status + Actions">
-      <span class="badge">🛠️ Under Construction</span>
-      <h2>Opening soon(ish)</h2>
-      <p>Short version: paint drying, permits permissing, vibes vibing.</p>
-
-      <div class="cta" role="group" aria-label="Primary actions">
-        <button class="btn" aria-disabled="true" title="Bookings open soon.">Book a stay (soon)</button>
-        <a class="btn secondary" href="mailto:hello@lickandtickle.example?subject=Howdy%20from%20Chic%E2%80%99s%20Beach">Email us</a>
-        <a class="btn secondary" href="https://maps.google.com/?q=Chic's%20Beach%2C%20VA" target="_blank" rel="noopener">Open map</a>
+    <section class="hero">
+      <div>
+        <h1 class="headline">Boutique builds, <span class="dot"></span> brand, and words — forged by people and AI.</h1>
+        <p class="sub">We pair sharp human judgment with model power to ship fast, clean work: strategy, identity, copy, and lightweight apps. No fluff. Just outcomes.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:hello@aisiststudio.com?subject=Start a build with AIsist">Start a build</a>
+          <a class="btn" href="#menu">See the quick menu</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/logo.png" alt="AIsist Studio emblem">
       </div>
     </section>
 
-    <section class="card" aria-label="Notify">
-      <h2>First to know?</h2>
-      <p class="mini">Drop your email. We’ll ping you when the sign flips to OPEN.</p>
-      <!-- Replace action with your real endpoint when ready -->
-      <form action="https://formspree.io/f/xbjwzykn" method="POST">
-        <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@beachmail.com" required aria-label="Email address" />
-        <button class="btn" type="submit">Notify me</button>
-        <input type="hidden" name="source" value="lick-and-tickle-mobile-min" />
-      </form>
+    <section class="grid" id="menu">
+      <article class="card">
+        <h3>Brand in a Day</h3>
+        <p>Logo tune-up, palette, voice, and a tight one‑pager. Made to move.</p>
+      </article>
+      <article class="card">
+        <h3>Copy & Concept</h3>
+        <p>Web, email, and product copy that lands. Names, taglines, and scripts, too.</p>
+      </article>
+      <article class="card">
+        <h3>Micro‑Apps</h3>
+        <p>Lean tools and prototypes — Chat flows, automations, and internal dashboards.</p>
+      </article>
+      <article class="card">
+        <h3>Strategy Sprints</h3>
+        <p>Positioning, roadmaps, and a game plan you can actually run.</p>
+      </article>
+      <article class="card">
+        <h3>Design Support</h3>
+        <p>UI polish, assets, and component cleanup for busy teams.</p>
+      </article>
+      <article class="card">
+        <h3>Creative Ops</h3>
+        <p>Systems for repeatable output: prompts, styleguides, and QA loops.</p>
+      </article>
     </section>
 
     <footer>
-      <p>© <span id="year"></span> The Lick &amp; Tickle — EBDBBNB • Chic’s Beach, Virginia</p>
+      <div>Based in Chic’s Beach, VA • Working remote‑first</div>
+      <div><a href="mailto:hello@aisiststudio.com">hello@aisiststudio.com</a></div>
     </footer>
   </div>
-
-  <script>
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
